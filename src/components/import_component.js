@@ -8,7 +8,7 @@ import Input from "./input";
 import Select from "./select";
 import Login from "./login";
 import Signup from "./singup";
-import AuthLayout from "./AuthLayout";
+import AuthLayout from "./authLayout";
 import RTE from "./Rte";
 import PostForm from '../post-form/PostForm'
 import Postcard from  '../components/postcard/';
