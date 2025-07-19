@@ -1,216 +1,4 @@
-// import React, {useEffect, useState} from 'react'
-// import services from "../appwrite/database_services.js";
-// import {Container, Postcard} from '../components/import_component'
-// import {  useNavigate } from 'react-router-dom';
-// import { PostForm } from '../components/import_component';  
 
-// function Home() {
-//      const navigate = useNavigate();
-//     const [posts, setPosts] = useState([])
-
-//     const navigateToPostForm = () => {
-//         navigate('/add-post'); }
-    
-//     useEffect(() => {
-//         services.GetPosts().then((posts) => {
-//             if (posts) {
-//                 setPosts(posts.documents)
-//             }
-//             else {
-//                 setPosts([]);
-//             }
-//         })
-//     }, []);
-  
-//     if (posts.length === 0) {
-//         return (
-//             <div className="w-full py-8 mt-4 text-center">
-//                 <Container>
-//                     <div className="flex flex-wrap">
-//                         <div className="p-2 w-full">
-//                             <h1 className="text-2xl font-bold hover:text-gray-500">
-//                                 Login to read post </h1>
-                            
-//                         </div>
-//                     </div>
-//                 </Container>
-//             </div>
-//         );
-    
-    
-//     }
-//     return (
-//         <div className='w-full py-8 text-center mt-4'>
-//             <Container>
-//                 <div className='flex flex-wrap text-center'>
-//                  <div className="bg-gradient-to-r from-slate-600 to-slate-700 text-white py-16 text-center rounded-lg shadow-lg mb-8">
-//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 tex">
-//           <div className="text-center">
-//             <h1 className="text-4xl md:text-6xl font-bold mb-4">Welcome to Article Holder</h1>
-//             <p className="text-xl md:text-2xl mb-8 text-slate-200">
-//               Discover, create, and share amazing articles with our community
-//             </p>
-//             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-//               <div className="relative w-full sm:w-96">
-//               </div>
-             
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-      
-//      </div>
-
-//             </Container>
-//             <div className="bg-slate-600 text-white py-16">
-//         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-//           <h2 className="text-3xl font-bold mb-4">Ready to Share Your Story?</h2>
-//           <p className="text-xl text-slate-200 mb-8">
-//             Join our community of writers and share your knowledge with thousands of readers.
-//           </p>
-//           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-//             <button className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2" onClick={navigateToPostForm}>
-//               Start Writing
-//             </button>
-            
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-      
-//     )
-// }
-
-// export default Home
-
-
-// "use client"
-// import { useSelector } from "react-redux"
-// import { Link } from "react-router-dom"
-// // Using basic HTML buttons for maximum stability as per previous feedback
-// // import { Button } from "./import_component"
-
-// function Home() {
-//   const authStatus = useSelector((state) => state.auth.status)
-
-//   return (
-//     <div className="flex items-center justify-center min-h-screen p-4 bg-gray-50">
-//       {authStatus ? (
-//         // Content for logged-in users - more detailed
-//         <div className="w-full max-w-4xl bg-white rounded-lg shadow-lg p-8 space-y-8">
-//           <div className="text-center">
-//             <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Welcome Back to Your Dashboard!</h1>
-//             <p className="text-lg text-gray-700">Here's a quick overview of your activity and recent posts.</p>
-//           </div>
-
-//           {/* Recent Posts Section */}
-//           <div className="border-t border-gray-200 pt-6">
-//             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Your Recent Posts : </h2>
-//             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-//               {/* Placeholder for individual post cards */}
-//               <div className="bg-gray-100 p-4 rounded-md shadow-sm">
-//                 <h3 className="font-medium text-lg mb-1">Post Title 1</h3>
-//                 <p className="text-sm text-gray-600">A short description of your first post...</p>
-//                 <Link to="/post/1" className="text-blue-600 hover:underline text-sm mt-2 block">
-//                   Read More
-//                 </Link>
-//               </div>
-//               <div className="bg-gray-100 p-4 rounded-md shadow-sm">
-//                 <h3 className="font-medium text-lg mb-1">Post Title 2</h3>
-//                 <p className="text-sm text-gray-600">Another interesting post you recently created...</p>
-//                 <Link to="/post/2" className="text-blue-600 hover:underline text-sm mt-2 block">
-//                   Read More
-//                 </Link>
-//               </div>
-//               <div className="bg-gray-100 p-4 rounded-md shadow-sm">
-//                 <h3 className="font-medium text-lg mb-1">Post Title 3</h3>
-//                 <p className="text-sm text-gray-600">Check out your latest thoughts and ideas...</p>
-//                 <Link to="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX2VPATBlqHJOQQIJFbeJvW5elcV94Jb1rsQ&s" className="text-blue-600 hover:underline text-sm mt-2 block">
-//                   Read More 
-//                 </Link>
-//               </div>
-//             </div>
-//             <div className="text-center mt-6">
-//               <Link to="/all-posts">
-//                 <button className="px-8 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 text-lg font-medium">
-//                   View All Posts
-//                 </button>
-//               </Link>
-//             </div>
-//           </div>
-
-//           {/* Quick Actions Section */}
-//           <div className="border-t border-gray-200 pt-6">
-//             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Quick Actions</h2>
-//             <div className="flex flex-wrap justify-center gap-4">
-//               <Link to="/add-post">
-//                 <button className="px-6 py-2 bg-green-500 text-white rounded-md hover:bg-green-600">
-//                   Create New Post
-//                 </button>
-//               </Link>
-             
-//             </div>
-//           </div>
-//         </div>
-//       ) : (
-//         // Content for logged-out users - more detailed landing page feel
-//         <div className="w-full max-w-4xl bg-white rounded-lg shadow-lg p-8 space-y-8">
-//           <div className="text-center">
-//             <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Welcome to Our Amazing Platform!</h1>
-//             <p className="text-lg text-gray-700 mb-6">Discover, create, and share content with a vibrant community.</p>
-//             <div className="space-x-4">
-//               <Link to="/signup">
-//                 <button className="px-8 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 text-lg font-medium">
-//                   Get Started
-//                 </button>
-//               </Link>
-//               <Link to="/login">
-//                 <button className="px-8 py-3 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 text-lg font-medium">
-//                   Sign In
-//                 </button>
-//               </Link>
-//             </div>
-//           </div>
-
-//           {/* Features Section */}
-//           <div className="border-t border-gray-200 pt-6">
-//             <h2 className="text-2xl font-semibold text-gray-800 mb-4 text-center">Key Features</h2>
-//             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-//               <div className="p-4 bg-gray-100 rounded-md shadow-sm">
-//                 <h3 className="font-medium text-lg mb-1">Easy Content Creation</h3>
-//                 <p className="text-sm text-gray-600">Publish your ideas effortlessly with our intuitive editor.</p>
-//               </div>
-//               <div className="p-4 bg-gray-100 rounded-md shadow-sm">
-//                 <h3 className="font-medium text-lg mb-1">Connect & Share</h3>
-//                 <p className="text-sm text-gray-600">Engage with others and share your work across platforms.</p>
-//               </div>
-//               <div className="p-4 bg-gray-100 rounded-md shadow-sm">
-//                 <h3 className="font-medium text-lg mb-1">Discover New Ideas</h3>
-//                 <p className="text-sm text-gray-600">Explore a vast collection of content from diverse creators.</p>
-//               </div>
-//             </div>
-//           </div>
-
-//           {/* Call to Action */}
-//           <div className="border-t border-gray-200 pt-6 text-center">
-//             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Ready to Join?</h2>
-//             <p className="text-lg text-gray-700 mb-6">Sign up now and start your journey with us!</p>
-//             <Link to="/signup">
-//               <button className="px-8 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 text-lg font-medium">
-//                 Create Your Free Account
-//               </button>
-//             </Link>
-//           </div>
-//         </div>
-//       )}
-//     </div>
-//   )
-// }
-
-// export default Home
-
-
-"use client"
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 
@@ -220,21 +8,18 @@ function Home() {
   return (
     <div className="flex items-center justify-center min-h-screen p-4 bg-gray-50">
       {authStatus ? (
-        // Content for logged-in users - now with static image content
+       
         <div className="w-full max-w-4xl bg-white rounded-lg shadow-lg p-8 space-y-8">
           <div className="text-center">
             <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Welcome Back to Your Dashboard!</h1>
             <p className="text-lg text-gray-700">Here's a quick overview of your activity and recent updates.</p>
           </div>
 
-          {/* Dashboard Overview Section (Static Content) */}
-        
-
-          {/* Recent Images Section */}
+    
           <div className="border-t border-gray-200 pt-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Recent Posts:</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Placeholder for individual images */}
+         
               <div className="bg-gray-100 p-2 rounded-md shadow-sm overflow-hidden">
                 <img
                 src="data:image/jpeg;base64,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"
@@ -266,7 +51,7 @@ function Home() {
             </div>
           </div>
 
-          {/* Quick Actions Section */}
+        
           <div className="border-t border-gray-200 pt-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Quick Actions</h2>
             <div className="flex flex-wrap justify-center gap-4">
@@ -279,11 +64,11 @@ function Home() {
             </div>
           </div>
 
-          {/* Recent Activity Feed (Static Content) */}
+         
         
         </div>
       ) : (
-        // Content for logged-out users - more detailed landing page feel
+       
         <div className="w-full max-w-4xl bg-white rounded-lg shadow-lg p-8 space-y-8">
           <div className="text-center">
             <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Welcome to Our Amazing Platform!</h1>
@@ -320,9 +105,7 @@ function Home() {
               </div>
             </div>
           </div>
-
-          {/* Call to Action */}
-          <div className="border-t border-gray-200 pt-6 text-center">
+ <div className="border-t border-gray-200 pt-6 text-center">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Ready to Join?</h2>
             <p className="text-lg text-gray-700 mb-6">Sign up now and start your journey with us!</p>
             <Link to="/signup">
