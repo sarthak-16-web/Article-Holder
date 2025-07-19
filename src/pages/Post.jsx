@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
 import services from "../appwrite/database_services.js"
-import { Button, Container } from "../components/import_component" // Assuming Button and Container are styled
+import { Button, Container } from "../components/import_component" 
 import parse from "html-react-parser"
 import { useSelector } from "react-redux"
 
@@ -10,28 +10,28 @@ export default function Post() {
   const [post, setPost] = useState(null)
   const { slug } = useParams()
   const navigate = useNavigate()
-  const [imageUrl, setImageUrl] = useState("") // State to hold the fetched image URL
+  const [imageUrl, setImageUrl] = useState("") 
   const userData = useSelector((state) => state.auth.userData)
 
-  // Determine if the logged-in user is the author of the post
+ 
   const isAuthor = post && userData ? post.user_id === userData.$id : false
 
-  // Fetch post data when slug changes
+  
   useEffect(() => {
     if (slug) {
       services.GetPost(slug).then((fetchedPost) => {
         if (fetchedPost) {
           setPost(fetchedPost)
         } else {
-          navigate("/") // Navigate home if post not found
+          navigate("/") 
         }
       })
     } else {
-      navigate("/") // Navigate home if no slug
+      navigate("/") 
     }
   }, [slug, navigate])
 
-  // Fetch image URL when post data is available
+
   useEffect(() => {
     let isCancelled = false
     async function fetchImage() {
@@ -43,24 +43,24 @@ export default function Post() {
           }
         } catch (error) {
           console.error("Error loading image:", error)
-          if (!isCancelled) setImageUrl("/placeholder.svg?height=400&width=600") // Fallback on error
+          if (!isCancelled) setImageUrl("/placeholder.svg?height=400&width=600") 
         }
       } else if (!isCancelled) {
-        setImageUrl("/placeholder.svg?height=400&width=600") // Fallback if no featured_Image
+        setImageUrl("/placeholder.svg?height=400&width=600") 
       }
     }
     fetchImage()
     return () => {
       isCancelled = true
-    } // Cleanup for unmounted component
-  }, [post]) // Re-run when post object changes
+    } 
+  }, [post]) 
 
-  // Delete post function
+
   const deletePost = () => {
     services.DeletePost(post.$id).then((status) => {
       if (status) {
-        services.DeleteFile(post.featured_Image) // Delete associated file
-        navigate("/") // Navigate home after deletion
+        services.DeleteFile(post.featured_Image) 
+        navigate("/")
       }
     })
   }
@@ -69,7 +69,7 @@ export default function Post() {
     <div className="min-h-screen py-8 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       <Container>
         <div className="w-full bg-white rounded-2xl shadow-xl border border-gray-200/50 overflow-hidden p-8">
-          {/* Featured Image Section */}
+          
           <div className="w-full mb-6 relative rounded-xl overflow-hidden shadow-md border border-gray-100">
             {imageUrl ? (
               <img
@@ -77,7 +77,7 @@ export default function Post() {
                 alt={post.title}
                className="w-full max-h-96 object-contain rounded-xl bg-white"
 
-                 // Fixed height for consistency
+                 
                 onError={(e) => {
                   e.currentTarget.src = "/placeholder.svg?height=400&width=600"
                   e.currentTarget.alt = "Image not available"
@@ -90,7 +90,7 @@ export default function Post() {
             )}
           </div>
 
-          {/* Post Title and Buttons Section */}
+         
           <div className="w-full mb-6 flex flex-col md:flex-row md:items-center md:justify-between">
             <h1 className="text-4xl font-extrabold text-gray-900 leading-tight text-center md:text-left mb-4 md:mb-0">
               {post.title}
@@ -116,7 +116,7 @@ export default function Post() {
             )}
           </div>
 
-          {/* Post Content */}
+          
           <div className="browser-css text-gray-800 leading-relaxed text-lg">{parse(post.content)}</div>
         </div>
       </Container>
