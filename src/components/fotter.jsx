@@ -14,7 +14,7 @@ function Footer() {
                 
               </div>
               <div>
-                <p className="text-sm text-gray-600 leading-relaxed">Copyright © 2023. All Rights Reserved by DevUI.</p>
+                <p className="text-sm text-gray-600 leading-relaxed">Copyright © 2025</p>
               </div>
             </div>
           </div>
