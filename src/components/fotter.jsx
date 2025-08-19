@@ -25,50 +25,22 @@ function Footer() {
               <ul className="space-y-3">
                 <li>
                   <Link className="text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm" to="/">
-                    Features
+                   Email : kasat4309@gmail.com
                   </Link>
                 </li>
                 <li>
                   <Link className="text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm" to="/">
-                    Pricing
+                   No : 8959089535
                   </Link>
                 </li>
                 <li>
                   <Link className="text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm" to="/">
-                    Affiliate Program
+                    Git : sarthak-web-dev
                   </Link>
                 </li>
                 <li>
                   <Link className="text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm" to="/">
-                    Press Kit
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="w-full p-6 md:w-1/2 lg:w-2/12">
-            <div className="h-full">
-              <h3 className="tracking-wide mb-6 text-sm font-semibold text-gray-800">Support</h3>
-              <ul className="space-y-3">
-                <li>
-                  <Link className="text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm" to="/">
-                    Account
-                  </Link>
-                </li>
-                <li>
-                  <Link className="text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm" to="/">
-                    Help
-                  </Link>
-                </li>
-                <li>
-                  <Link className="text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm" to="/">
-                    Contact Us
-                  </Link>
-                </li>
-                <li>
-                  <Link className="text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm" to="/">
-                    Customer Support
+                   Ig : sarthak_kasat_
                   </Link>
                 </li>
               </ul>
@@ -77,21 +49,21 @@ function Footer() {
 
           <div className="w-full p-6 md:w-1/2 lg:w-3/12">
             <div className="h-full">
-              <h3 className="tracking-wide mb-6 text-sm font-semibold text-gray-800">Legals</h3>
+              <h3 className="tracking-wide mb-6 text-sm font-semibold text-gray-800">Legal</h3>
               <ul className="space-y-3">
                 <li>
                   <Link className="text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm" to="/">
-                    Terms &amp; Conditions
+                   All rights reserved 
                   </Link>
                 </li>
                 <li>
                   <Link className="text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm" to="/">
-                    Privacy Policy
+                    Section : 48X
                   </Link>
                 </li>
                 <li>
                   <Link className="text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm" to="/">
-                    Licensing
+                    Upcoming changes 
                   </Link>
                 </li>
               </ul>
